@@ -51,9 +51,7 @@
                         <a href="#feature" class="nav-item nav-link">Features</a>
                         <a href="{% url 'dashboard' %}" class="nav-item nav-link">Dashboard</a>
                         <a href="{% url 'logout' %}" class="nav-item nav-link">Logout</a>
-                        {% else %}
                         <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
-                        {% endif %}
                     </div>
                     <div id="nightlightDiv">
                         <img src="{% static 'img/moon.png' %}" id="switch">
