@@ -1,1 +1,262 @@
-<h1>Hello everyone!!!!</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Head Start -->
+    <head>
+    <meta charset="utf-8">
+    <title>HexTrack</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="./lib/animate/animate.min.css">
+    <link rel="stylesheet" href="./lib/owlcarousel/assets/owl.carousel.min.css">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css">
+    </head>
+
+    <!-- Head End -->
+
+           <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0" id="home">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="{% url 'index' %}" class="navbar-brand p-0">
+                    <h1 class="m-0">HexTrack</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+                        <a href="#About" class="nav-item nav-link">About</a>
+                        <a href="#feature" class="nav-item nav-link">Features</a>
+                        <a href="{% url 'dashboard' %}" class="nav-item nav-link">Dashboard</a>
+                        <a href="{% url 'logout' %}" class="nav-item nav-link">Logout</a>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
+                        {% endif %}
+                    </div>
+                    <div id="nightlightDiv">
+                        <img src="{% static 'img/moon.png' %}" id="switch">
+                    </div>
+                    <div id="donateButtonDiv">
+                        <a href="{% url 'donate' %}" id="donateButton" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Donate</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-xxl bg-primary hero-header">
+                <div class="container px-lg-5">
+                    <div class="row g-5">
+                        <div class="col-lg-8 text-center text-lg-start">
+                            <h1 class="text-white mb-4 animated slideInDown">Monitor Your PulseChain Portfolio Today!</h1>
+                            <p class="text-white pb-3 animated slideInDown">Keep track of your PulseChain portfolio, now with HexTrack. No need to wait for your favorite coins on the PulseChain network to be added to your current portfolio app.</p>
+                            <a href="" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
+                            <a href="{% url 'donate' %}" class="btn btn-secondary-gradient py-sm-3 px-4 px-sm-5 rounded-pill animated slideInRight">Donate</a>
+							<img src="{% static "img/hex.png" %}" class="rotate" width="100" height="100" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <!-- Navbar & Hero End -->
+<body id="bootstrap-overrides">
+
+        <!-- About Start -->
+        <div class="container-xxl py-5" id="about">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <h5 id= "About" class="text-primary-gradient-light glow fw-medium">About App</h5>
+                        <h1 class="mb-4">Best Portfolio App For PulseChain</h1>
+                        <p class="mb-4" style="color: var(--ptag);">Keep track of your profit/loss easily now with HexTrack. Make an account to start tracking your current positions without the hassle.</p>
+                        <div class="row g-4 mb-4">
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="d-flex">
+                                    <i class="fa fa-rocket fa-2x text-primary-gradient flex-shrink-0 mt-1"></i>
+                                    <div class="ms-3">
+                                        <h2 class="mb-0" style="padding-left: 10px;" data-toggle="counter-up">{{total_all_positions}}</h2>
+                                        <p class="text-primary-gradient-light mb-0">Monitored Positions</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                                <div class="d-flex">
+                                    <i class="fa  fa-2x text-secondary-gradient flex-shrink-0 mt-1"></i>
+                                    <div class="ms-3">
+                                        <h2 class="mb-0" data-toggle="counter-up">{{user_count}}</h2>
+                                        <p class="text-primary-gradient-light mb-0">Active Accounts</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill mt-3">Read More</a>
+                    </div>
+                        <div class="col-lg-6">
+                            <a href="{% url 'preview' %}"><img class="img-fluid wow fadeInUp" data-wow-delay="0.5s" src="{% static 'img/about.png' %}" id="switch_pic"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Features Start -->
+        <div class="container-xxl py-5" id="feature">
+            <div class="container py-5 px-lg-5">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 id= "features" class="text-primary-gradient-light glow fw-medium">App Features</h5>
+                    <h1 class="mb-5">Awesome Features</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="feature-item bg-light rounded p-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                                <i class="fa fa-eye text-white fs-4"></i>
+                            </div>
+                            <h5 class="mb-3">Position Monitoring</h5>
+                            <p class="m-0">Enter your current positions to keep track of your profit/loss individually or as a whole. No need to connect your wallet. </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="feature-item bg-light rounded p-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                                <i class="fa fa-coins text-white fs-4"></i>
+                            </div>
+                            <h5 class="mb-3">Coins</h5>
+                            <p class="m-0">Native PulseChain coins are supported. New coins can be requested or will be added automatically.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="feature-item bg-light rounded p-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                                <i class="fa fa-edit text-white fs-4"></i>
+                            </div>
+                            <h5 class="mb-3">Editable Positions</h5>
+                            <p class="m-0">Editable fields such as "Positions", "Purchase Price", "Quanity, and Date Purchased."</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="feature-item bg-light rounded p-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                                <i class="fa fa-shield-alt text-white fs-4"></i>
+                            </div>
+                            <h5 class="mb-3">Fully Secured</h5>
+                            <p class="m-0">HexTrack uses protective measures employed to secure data confidentiality, integrity, and availability. </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="feature-item bg-light rounded p-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                                <i class="fa fa-cloud text-white fs-4"></i>
+                            </div>
+                            <h5 class="mb-3">Cloud Storage</h5>
+                            <p class="m-0">All data is stored remotely on our server, no applications or user endpoints required.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="feature-item bg-light rounded p-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                                <i class="fa fa-mobile-alt text-white fs-4"></i>
+                            </div>
+                            <h5 class="mb-3">Mobile Compatability</h5>
+                            <p class="m-0">Use HexTrack on your Desktop or Mobile device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Features End -->
+
+        <!-- Process Start -->
+        <div class="container-xxl py-5" id="bootstrap-overrides">
+            <div class="container py-5 px-lg-5" >
+                <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="text-primary-gradient-light glow fw-medium">How It Works</h5>
+                    <h1 class="mb-5">3 Easy Steps</h1>
+                </div>
+                <div class="row gy-5 gx-4 justify-content-center">
+                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                                <i class="fa fa-cog fa-3x text-white"></i>
+                            </div>
+                            <h5 class="mt-4 mb-3">Make an Account</h5>
+                            <p class="mb-0"><a href="{% url 'createacc' %}"> Create an account </a> with us to get started.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                                <i class="fa fa-address-card fa-3x text-white"></i>
+                            </div>
+                            <h5 class="mt-4 mb-3">Setup Your Profile</h5>
+                            <p class="mb-0">Add your current positions.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                                <i class="fa fa-check fa-3x text-white"></i>
+                            </div>
+                            <h5 class="mt-4 mb-3" >Enjoy The Features</h5>
+                            <p class="mb-0">Monitor your account through the dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        <!-- Process Start -->
+
+
+
+        <!-- Footer Start -->
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+
+        <a href="#" class="btn btn-lg btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up text-white"></i></a>
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./lib/wow/wow.min.js"></script>
+    <script src="./lib/easing/easing.min.js"></script>
+    <script src="./lib/waypoints/waypoints.min.js"></script>
+    <script src="./lib/counterup/counterup.min.js"></script>
+    <script src="./lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="./js/main.js"></script>
+
+    <!--Light & Dark Mode Script -->
+
+</body>
+
+</html>
