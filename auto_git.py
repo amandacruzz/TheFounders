@@ -6,14 +6,15 @@ while True:
 	try:
 		os.system("git pull origin > temp")
 
-		#file = open("temp")
-		#text = file.read().strip()
+		file = open("temp")
+		text = file.read().strip()
 
-		#if text != "Already up to date.":
-		#	os.system("sudo fuser -k 8000/tcp")
-		#	os.system("gunicorn -c gunicorn_config.py Hextrack.wsgi")
+		if text != "Already up to date.":
+			os.system("sudo fuser -k 8000/tcp")
+			os.system("gunicorn -c gunicorn_config.py Hextrack.wsgi")
+
 	except:
 		pass
 	finally:
-		#os.remove("temp")
-		time.sleep(30)
+		os.remove("temp")
+		time.sleep(15)

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://hextrack.app:443/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/about/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/sponsor/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/account/login/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/donate/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/preview/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/account/createacc/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/contact/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/privacy/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/terms/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/notcreated/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/faqs/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/account/forgotpass/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hextrack.app:443/positions/</loc>
+  <lastmod>2022-07-17T09:59:51+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
