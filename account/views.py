@@ -12,7 +12,7 @@ import re
 
 # Create your views here.
 
-
+@csrf_exempt
 def loginPage(request):
 	if request.method == 'POST':
 		username = request.POST.get('username')
@@ -29,7 +29,7 @@ def loginPage(request):
 	else:
 		return render(request, 'login.html')
 
-
+@csrf_exempt
 def createacc(request):
 	emailPattern = re.compile("([\w\.\-])+@([\w\.\-])+\.(\w)+")  # match if there's an @ and a . with something follows
 	usernamePattern = re.compile("\w\w\w\w\w\w(\w)*")  # match if there's 6 or more alphanumeric (with _) characters
@@ -70,11 +70,11 @@ def createacc(request):
 	else:
 		return render(request, 'create_acc.html')
 
-
+@csrf_exempt
 def logout(request):
 	auth.logout(request)
 	return redirect('/')
-
+@csrf_exempt
 def sendResetEmail(email, secretNum, username):
 	template = "reset_email.html"
 
@@ -85,7 +85,7 @@ def sendResetEmail(email, secretNum, username):
 	message = EmailMessage('HexTrack Password Reset', email_contents, 'accounts@hextrack.app', [email])
 	message.content_subtype = 'html'
 	message.send()
-
+@csrf_exempt
 def forgotpass(request):
 	emailPattern = re.compile("([\w\.\-])+@([\w\.\-])+\.(\w)+")  # match if there's an @ and a . with something follows
 	usernamePattern = re.compile("\w\w\w\w\w\w(\w)*")  # match if there's 6 or more alphanumeric (with _) characters
@@ -135,7 +135,7 @@ def forgotpass(request):
 
 	return render(request, "forgot_pass.html")
 
-
+@csrf_exempt
 def reset(request):
 	secretInt = request.GET['k']
 	username = request.GET['u']
