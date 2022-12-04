@@ -1,0 +1,41 @@
+    <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3">
+                        <h4 class="text-white mb-4">Quick Link</h4>
+                        <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
+                        <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
+                        <a class="btn btn-link" href="{% url 'privacy' %}">Privacy Policy</a>
+                        <a class="btn btn-link" href="{% url 'terms' %}">Terms & Conditions</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h4 class="text-white mb-4">Navigation</h4>
+                        <a class="btn btn-link" href="{% url 'index' %}">Home</a>
+                        <a class="btn btn-link" href="{% url 'index' %}">About</a>
+                        <a class="btn btn-link" href="{% url 'index' %}">Features</a>
+                        <a class="btn btn-link" href="{% url 'login' %}">Login</a>
+                        <a class="btn btn-link" href="{% url 'createacc' %}">Create Account</a>
+					</div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">HexTrack.app</a>, All Rights Reserved. 
+							
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="{% url 'index' %}">Home</a>
+                                <a href="{% url 'notcreated' %}">Cookies</a>
+                                <a href="{% url 'notcreated' %}">Help</a>
+                                <a href="{% url 'faqs' %}">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Footer End -->

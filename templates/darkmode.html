@@ -1,0 +1,29 @@
+{% load static %}
+    <!--Light & Dark Mode Script -->
+
+    <script>
+
+    const switchButton = document.getElementById('switch');
+    const switchpic = document.getElementById('switch_pic');
+
+    switchButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme'); //toggle the HTML body class
+ 
+        if(document.body.classList.contains('dark-theme')){ //when the body has the class 'dark-theme' currently
+            localStorage.setItem('darkMode', 'enabled'); //store this data if dark mode is on
+            switchButton.src = "{% static 'img/sun.png' %}"; //change image to light/sun
+            switchpic.src = "{% static 'img/about_dark.png' %}";
+        }else{
+            localStorage.setItem('darkMode', 'disabled'); //store this data if dark mode is off
+            switchButton.src = "{% static 'img/moon.png' %}"; //change image to dark/moon
+            switchpic.src = "{% static 'img/about.png' %}";
+        }
+    });
+ 
+    if(localStorage.getItem('darkMode') == 'enabled'){
+        document.body.classList.toggle('dark-theme');
+        switchButton.src = "{% static 'img/sun.png' %}"; //change image to light/sun
+        switchpic.src = "{% static 'img/about_dark.png' %}";
+    }
+
+    </script>

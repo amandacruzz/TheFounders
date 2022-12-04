@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Head Start -->
+
+    <head>
+    <title>HexTrack - PulseChain Portfolio Tracker - FAQ</title>
+    <meta content="Take a look at Hextrack's' frequently ask questions or feel free to contact us." name="description">
+    {% include 'head.html' %}
+    </head>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://hextrack.app/faqs/" />
+
+    <!-- Head End -->
+
+
+        <!-- Navbar & Hero Start -->
+        {% include 'navbar.html' %}
+        <!-- Navbar & Hero End -->
+
+<body id="bootstrap-overrides">
+
+        <!-- FAQ Start -->
+        <div class="container-xxl py-5" id="">
+            <div class="container py-5 px-lg-5">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 id= "features" class="text-primary-gradient fw-medium">Frequently Asked Questions</h1>
+                      <section class="faq-container">
+                        <div class="faq-one">
+                            <!-- faq question -->
+                            <h3 class="faq-page">What is HexTrack?</h3>
+                            <!-- faq answer -->
+                            <div class="faq-body">
+                                <p>HexTrack is a Pulsechain portfolio tracker. Track your profit/loss easily using the dashboard. Each transaction is individually tracked and compiled to simplify your cost average per coin and your portfolio as a whole. Hextrack also includes charts such as coin percentage holdings that lets you see the total percentage of each coin you have in your portfolio. </p>
+                            </div>
+                        </div>
+                        <hr class="hr-line">
+                        <div class="faq-two">
+                            <!-- faq question -->
+                            <h3 class="faq-page">How do I get started?</h3>
+                            <!-- faq answer -->
+                            <div class="faq-body">
+                                <p>To get started, simply <a href="{% url 'createacc' %}"> Create an account </a> with us. Once you have created you account you can <a href="{% url 'login' %}"> Login </a> to access your <a href="{% url 'dashboard' %}"> Dashboard </a>. First thing to do is to head over to the <a href="{% url 'positions' %}"> Positions </a> page to enter your position holdings. Fill out the coin you purchased; the amount of coins you purchased, and how much you paid per coin. You can select the date and time you made this purchase then click Submit. Head back over to the Dashboard to see the stats of the newly entered position. Thats it! </p>
+                            </div>
+                        </div>
+                        <hr class="hr-line">
+                        <div class="faq-three">
+                            <!-- faq question -->
+                            <h3 class="faq-page">Is my information secure?</h3>
+                            <!-- faq answer -->
+                            <div class="faq-body">
+                                <p>Sure is! Hextrack only stores information needed for you to access the site. Measures were taken to make sure any information tied to your account is stored with up to date security standards and implemented using best practices.</p>
+                            </div>
+                            <!-- faq question -->
+                            <h3 class="faq-page">How do I request a new coin?</h3>
+                            <!-- faq answer -->
+                            <div class="faq-body">
+                                <p><a href='https://twitter.com/hextrackapp'>Please Contact Us Through Twitter</a></p>
+                            </div>
+                            <!-- faq question -->
+                            <h3 class="faq-page">Is HexTrack FREE?</h3>
+                            <!-- faq answer -->
+                            <div class="faq-body">
+                                <p>HexTrack is in fact free to use. If you're enjoying using this platform please consider donating to support our growing server costs.</p>
+                            </div>
+                        </div>
+                        <br>
+					<h5><a href='https://twitter.com/hextrackapp' class="text-primary-gradient fw-medium animated slideInDown donatetxt">Please Contact Us Through Twitter</h5>
+                    </div>
+			</div>
+        <!-- FAQ End -->
+
+
+        <!-- Footer Start -->
+        {% include 'footer.html' %}
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up text-white"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <!-- Light & Dark Mode Script -->
+    {% include 'darkmode.html' %}
+
+    <!-- FAQ button script -->
+    <script>
+    var faq = document.getElementsByClassName("faq-page");
+    var i;
+    for (i = 0; i < faq.length; i++) {
+        faq[i].addEventListener("click", function () {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+            /* Toggle between hiding and showing the active panel */
+            var body = this.nextElementSibling;
+            if (body.style.display === "block") {
+                body.style.display = "none";
+            } else {
+                body.style.display = "block";
+            }
+        });
+    }
+    </script>
+</body>
+
+</html>

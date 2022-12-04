@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Head Start -->
+
+    <head>
+    <title>HexTrack - PulseChain Portfolio Tracker - Preview</title>
+    <meta content="Preview Hextrack dashboard without creating an account. Get a feel of what the dashboard feels like before you commit to using our free portfolio tracker." name="description">
+    {% include 'head.html' %}
+    </head>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://hextrack.app/preview/" />
+
+    <!-- Head End -->
+
+
+        <!-- Navbar & Hero Start -->
+        {% include 'navbar.html' %}
+        <!-- Navbar & Hero End -->
+<body id="bootstrap-overrides">
+
+        <!-- Donate Start -->
+        <div class="container-xxl py-5" id="">
+            <div class="container py-5 px-lg-5">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 id= "features" class="text-primary-gradient fw-medium">Preview</h1>
+                      <img class="img-fluid wow fadeInUp" data-wow-delay="0.1s" src="{% static 'img/preview1.png' %}" alt="Hextrack preview top">
+                      <img class="img-fluid wow fadeInUp" data-wow-delay="0.2s" src="{% static 'img/preview2.png' %}" alt="Hextrack preview bottom">
+                    </div>
+			</div>
+        <!-- Donate End -->
+
+
+        <!-- Footer Start -->
+        {% include 'footer.html' %}
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up text-white"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <!--Light & Dark Mode Script -->
+    {% include 'darkmode.html' %}
+
+</body>
+
+</html>

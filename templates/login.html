@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Head Start -->
+
+    <head>
+    <title>HexTrack - PulseChain Portfolio Tracker - Login</title>
+    <meta content="Login to your account and head over to the dashboard for position statistics and price data for Pulsechain native tokens" name="description">
+    {% include 'head.html' %}
+    </head>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://hextrack.app/account/login/" />
+
+    <!-- Head End -->
+
+
+        <!-- Navbar & Hero Start -->
+        {% include 'navbar.html' %}
+        <!-- Navbar & Hero End -->
+
+<body id="bootstrap-overrides">
+
+        <!-- Login Start -->
+        <div style="padding-top:10px">
+            <div class="signupFrm">
+                <div class="wrapper">
+                    <form action="" method="POST"class="form container">
+                        {% csrf_token %}
+                      <h1 class="text-primary-gradient fw-medium loginmg">Login</h1>
+
+                      <div class="inputContainer col-12">
+                        <input type="text" name="username" class="input" placeholder="a">
+                        <label for="" class="label">Username</label>
+                      </div>
+
+                      <div class="inputContainer col-12">
+                        <input type="password" name="password" class="input" placeholder="a">
+                        <label for="" class="label col-12">Password</label>
+                      </div>
+                        <div>
+                        {% for message in messages %}
+                        <h5> {{message}}</h5>
+                        {% endfor %}
+                        </div>
+                        <div>
+                            <input class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block loginbttn " type="submit"  id="loginButton" value="Login">
+		                    <a href="{% url 'createacc' %}" id="createAccountButton" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block creatacc" >Create Account</a>
+                        </div>
+                        <div>
+                            <a href="{% url 'forgotpass' %}" style="display:block;padding-top: 20px" >Forgot Password</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login End -->
+
+
+        <!-- Footer Start -->
+        {% include 'footer.html' %}
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up text-white"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <!--Light & Dark Mode Script -->
+    {% include 'darkmode.html' %}
+
+</body>
+
+</html> 

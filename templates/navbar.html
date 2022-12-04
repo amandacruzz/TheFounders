@@ -1,0 +1,43 @@
+{% load static %}
+
+     <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0" id="home">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="{% url 'index' %}" class="navbar-brand p-0">
+                    <h1 class="m-0">HexTrack</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+                        <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                        <a href="{% url 'sponsor' %}" class="nav-item nav-link">Sponsor</a>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'dashboard' %}" class="nav-item nav-link">Dashboard</a>
+                        <a href="{% url 'positions' %}" class="nav-item nav-link">Positions</a>
+                        <a href="{% url 'logout' %}" class="nav-item nav-link">Logout</a>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
+                        {% endif %}
+                    </div>
+                    <div id="nightlightDiv">
+                        <img src="{% static 'img/moon.png' %}" id="switch" alt="darkmode moon">
+                    </div>
+                    <div id="donateButtonDiv">    
+                        <a href="{% url 'donate' %}" id="donateButton" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Donate</a>
+                       </div>
+                </div>
+            </nav>
+
+            <div class="container-xxl bg-primary hero-header">
+                <div class="container px-lg-5">
+                    <div class="row g-5"> 
+                    </div>
+                </div>
+            </div>
+ 
+      <!-- Navbar & Hero End -->
+
