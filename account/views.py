@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.core.mail import send_mail, EmailMessage
 import random
-
+from django.views.decorators.csrf import csrf_exempt
 from django.template.loader import render_to_string
 
 from .models import *
