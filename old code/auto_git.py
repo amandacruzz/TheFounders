@@ -11,7 +11,7 @@ while True:
 
 		#if text != "Already up to date.":
 		#	os.system("sudo fuser -k 8000/tcp")
-		#	os.system("gunicorn -c gunicorn_config.py Hextrack.wsgi")
+		#	os.system("gunicorn -c gunicorn_config.py Founders.wsgi")
 	except:
 		pass
 	finally:
