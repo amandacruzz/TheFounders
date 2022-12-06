@@ -21,7 +21,7 @@
         {% include 'navbar.html' %}
         <!-- Navbar & Hero End -->
 <body id="bootstrap-overrides">
-
+        <style>.left {margin-left: 75px;}</style>
         <!-- Add Position Start -->
         <div style="padding-top:10px">
             <div class="signupFrm" style="margin-top: 80px">
@@ -29,26 +29,26 @@
                     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <form action="" class="form" method="POST">
                         {% csrf_token %}
-                      <h2 class="text-primary-gradient fw-medium loginmg" style="padding-bottom: 15px">Add Position</h2>
+                      <h2 class="text-primary-gradient fw-medium loginmg" style="padding-bottom: 15px">Add Lost/Found Item</h2>
 
                       <div class="inputContainer">
-                        {% render_field form.coin class="input" placeholder="a" %}
-                        <label for="" class="label">Token</label>
+                        {% render_field form.title class="input" placeholder="a" %}
+                        <label for="" class="label">Title</label>
                       </div>
 
                       <div class="inputContainer">
-                        {% render_field form.quantity min=0.00000001 class="input" placeholder="a" %}
-                        <label for="" class="label">Quantity</label>
+                        {% render_field form.location min=0.00000001 class="input" placeholder="a" %}
+                        <label for="" class="label">Location</label>
                       </div>
 
                       <div class="inputContainer">
-                        {% render_field form.price_per_coin class="input" placeholder="a" %}
-                        <label for="" class="label">Price Per Coin (USD)</label>
+                        {% render_field form.image type="file" style="line-height: normal !important;margin-left: 75px;" placeholder="" %}
+                        <label for="" class="label">Image</label>
                       </div>
 
                       <div class="inputContainer">
-                        {% render_field form.time_bought class="input" type="datetime-local" style="line-height: normal !important" placeholder="" %}
-                        <label for="" class="label">Time Bought (Optional)</label>
+                        {% render_field form.description class="input" placeholder="a" %}
+                        <label for="" class="label">Description</label>
                       </div>
 
                       <div>

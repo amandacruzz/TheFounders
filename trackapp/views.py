@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
-from .forms import Acc_Positions_Form
+from .forms import Acc_Positions_Form, Lost_Item_Form
 from plots.views import pieChart, linechartPlain, historicPriceChange, aggPos, getPrices
 from plots.views import dashplotval
 
@@ -80,7 +80,7 @@ def positions(request):
     if str(request.user) == 'AnonymousUser':
         return redirect('/account/login/')
 
-    form = Acc_Positions_Form(request.POST)
+    form = Lost_Item_Form(request.POST)
 
     if form.data and form.is_valid() and form.cleaned_data['quantity'] != 0:
         position = form.save(commit=False)

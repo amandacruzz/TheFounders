@@ -23,6 +23,12 @@ class Coins(models.Model):
 	class Meta:
 		verbose_name_plural = "Coins"
 
+class lostItem(models.Model):
+	username_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+	title = models.TextField()
+	location = models.TextField()
+	description = models.TextField()
+	image = models.ImageField()
 
 class Acc_Positions(models.Model):
 	username_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
