@@ -28,7 +28,7 @@ class lostItem(models.Model):
 	title = models.CharField(max_length=1000, null=True)
 	location = models.CharField(max_length=1000, null=True)
 	description = models.CharField(max_length=1000, null=True)
-	image = models.ImageField(upload_to = "images/")
+	image = models.ImageField(upload_to = "static/img/")
 
 class Acc_Positions(models.Model):
 	username_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
