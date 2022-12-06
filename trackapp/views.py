@@ -8,7 +8,7 @@ from django.core.files.storage import FileSystemStorage
 
 
 def index(request):
-    total_all_positions = Acc_Positions.objects.count()
+    total_all_positions = lostItem.objects.count()
     user_count = User.objects.count()
     context = {
         'total_all_positions': total_all_positions,
