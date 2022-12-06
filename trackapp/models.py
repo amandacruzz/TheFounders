@@ -25,10 +25,10 @@ class Coins(models.Model):
 
 class lostItem(models.Model):
 	username_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-	title = models.TextField()
-	location = models.TextField()
-	description = models.TextField()
-	image = models.ImageField()
+	title = models.CharField(max_length=1000, null=True)
+	location = models.CharField(max_length=1000, null=True)
+	description = models.CharField(max_length=1000, null=True)
+	image = models.ImageField(upload_to = "images/")
 
 class Acc_Positions(models.Model):
 	username_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)

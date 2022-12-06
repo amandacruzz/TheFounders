@@ -27,22 +27,21 @@
             <div class="signupFrm" style="margin-top: 80px">
                 <div class="wrapper">
                     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <form action="" class="form" method="POST">
+                    <form action="" class="form" enctype="multipart/form-data" method="POST">
                         {% csrf_token %}
                       <h2 class="text-primary-gradient fw-medium loginmg" style="padding-bottom: 15px">Add Lost/Found Item</h2>
-
                       <div class="inputContainer">
                         {% render_field form.title class="input" placeholder="a" %}
                         <label for="" class="label">Title</label>
                       </div>
 
                       <div class="inputContainer">
-                        {% render_field form.location min=0.00000001 class="input" placeholder="a" %}
+                        {% render_field form.location class="input" placeholder="a" %}
                         <label for="" class="label">Location</label>
                       </div>
 
                       <div class="inputContainer">
-                        {% render_field form.image type="file" style="line-height: normal !important;margin-left: 75px;" placeholder="" %}
+                        {% render_field form.image style="line-height: normal !important;margin-left: 75px;" placeholder="" %}
                         <label for="" class="label">Image</label>
                       </div>
 
@@ -50,7 +49,6 @@
                         {% render_field form.description class="input" placeholder="a" %}
                         <label for="" class="label">Description</label>
                       </div>
-
                       <div>
                         <input id="createAccountButton" type="submit" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block" value="Submit">
                       </div>
