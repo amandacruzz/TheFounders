@@ -44,44 +44,9 @@
 
                         
 
-                        <!-- Holdings Start -->
-                        <div class="card card-body tabletxt formtable" style="margin-bottom: 20px">
-                            <h4 class="text-primary-gradient fw-medium loginmg" style="margin-bottom: 20px">Holdings</h4>
-                            <table class="table table-sm tabletxt">
-                                <tr>
-                                    <th class="titlecol fw-medium loginmg">Ticker</th>
-                                    <th class="titlecol fw-medium loginmg">Cost Average</th>
-                                    <th class="titlecol fw-medium loginmg">Current Price</th>
-                                    <th class="titlecol fw-medium loginmg">Quantity</th>
-                                    <th class="titlecol fw-medium loginmg">Current Value (USD)</th>
-                                    <th class="titlecol fw-medium loginmg">% Change in Value</th>
 
-                                </tr>
 
-                                {% for pos in aggregate_positions %}
-                                <tr>
-                                    <td class="text-primary-gradient">{{pos.ticker}}</td>
-                                    <td class="titlecol">{{pos.cost}}</td>
-                                    <td class="titlecol">{{pos.curPrice}}</td>
-                                    <td class="titlecol">{{pos.quantity}}</td>
-                                    <td class="titlecol">{{pos.curValue}}</td>
-                                    <td class="status">{{pos.percent}}%</td>
-                                </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
 
-                        <!-- Piechart Start -->
-                        {% if aggregate_positions %}
-                    <div>
-                        <div class="card card-body text-center wow fadeInUp formtable" data-wow-delay="0.2s" style="margin-bottom: 20px" >
-                            <h2 class="text-primary-gradient fw-medium">Charts</h2>
-                            <div style="{display: flex; position: relative; display: block; width: 100%; height: 100%; flex-direction: column; overflow: hidden;}">
-                                {{piechart |safe}}
-                            </div>
-                        </div>
-                    </div>
-                        {% endif %}
 
                         <!-- Coin Prices Start -->
 
