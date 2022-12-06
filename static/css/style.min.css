@@ -6,7 +6,9 @@
     --dark: #262B47;
 }
 
-
+body {
+    background-color: white !important;
+}
 /*** Spinner ***/
 #spinner {
     opacity: 0;
