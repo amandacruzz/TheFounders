@@ -30,14 +30,18 @@
                             <h5 class="portcolor portpadd">Here's what people have listed so far</h5>
 
                         <!-- Testing using a card -->
-                        <div class="card" style="width: 18rem;">
-                          <img class="card-img-top" src="{% static 'img/GatorLostLogo.png' %}" alt="Card image cap">
-                          <div class="card-body">
-                            <h3 class="card-title">Title here</h3>
-                            <h5 class="card-title">Location here</h5>
-                            <p class="card-text">Description here: Item is red, large, and was found next to a tree in Plaza near Lib West.</p>
-                            <a href="#" class="btn btn-primary">Contact</a>
-                          </div>
+                        <div class="lost_table">
+                            {% for lost_found in all_lost_found %}
+                                <div class="card" style="width: 18rem;margin: auto;">
+                                  <img class="card-img-top" src="/{{lost_found.image}}" alt="Card image cap">
+                                  <div class="card-body">
+                                    <h3 class="card-title">{{lost_found.lostOrFound}}: {{lost_found.title}}</h3>
+                                    <h5 class="card-title">{{lost_found.location}}</h5>
+                                    <p class="card-text">{{lost_found.description}}</p>
+                                    <a href="#" class="btn btn-primary">Contact</a>
+                                  </div>
+                                </div>
+                            {% endfor %}
                         </div>
 
 

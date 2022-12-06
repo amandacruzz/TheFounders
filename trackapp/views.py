@@ -70,7 +70,8 @@ def dashboard(request):
         'sevendays': 0.0,
         'fifteendays': 0.0,
         'thirtydays': 0.0,
-        'sixtydays': 0.0
+        'sixtydays': 0.0,
+        "all_lost_found": lostItem.objects.all()
     }
 
     return render(request, 'dashboard.html', context)
