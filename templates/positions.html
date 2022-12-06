@@ -36,6 +36,11 @@
                       </div>
 
                       <div class="inputContainer">
+                        {% render_field form.lostOrFound class="input" placeholder="a" %}
+                        <label for="" class="label">Lost Or Found</label>
+                      </div>
+
+                      <div class="inputContainer">
                         {% render_field form.location class="input" placeholder="a" %}
                         <label for="" class="label">Location</label>
                       </div>
@@ -65,26 +70,23 @@
             <div class="positionsTable">
                 <div class="row gy-5 gx-4 justify-content-center">
                     <div class="text-center wow fadeInUp formtable" data-wow-delay="0.5s">
-                        <h2 class="text-primary-gradient fw-medium loginmg">Current Positions ({{total_positions}})</h2>
+                        <h2 class="text-primary-gradient fw-medium loginmg">Your Lost & Found Items</h2>
                         <hr>
                             <div class="card card-body">
-	                            <table class="table table-sm">
-		                            <tr>
-			                            <th class="text-primary-gradient fw-medium loginmg pos-tb-item">Ticker</th>
-			                            <th class="text-primary-gradient fw-medium loginmg pos-tb-item">Price</th>
-			                            <th class="text-primary-gradient fw-medium loginmg pos-tb-item">Quantity</th>
-                                        <th class="text-primary-gradient fw-medium loginmg pos-tb-item">Remove</th>
-		                            </tr>
-
-                                    {% for pos in user_positions %}
-                                    <tr>
-                                        <td class="pos-tb-item">{{pos.coin}}</td>
-                                        <td class="pos-tb-item">{{pos.price_per_coin}}</td>
-                                        <td class="pos-tb-item">{{pos.quantity}}</td>
-                                        <td><a href="{% url 'deletePosition' pos.id %}" class="btn btn-primary-gradient rounded-pill" onclick="return confirm('Are you sure?');">Delete</a></td>
-                                    </tr>
+	                            <div class="lost_table">
+                                    {% for lost_found in user_lost_found %}
+                                        <div class="card" style="width: 18rem;margin: auto;">
+                                          <img class="card-img-top" src="/{{lost_found.image}}" alt="Card image cap">
+                                          <div class="card-body">
+                                            <h3 class="card-title">{{lost_found.lostOrFound}}: {{lost_found.title}}</h3>
+                                            <h5 class="card-title">{{lost_found.location}}</h5>
+                                            <p class="card-text">{{lost_found.description}}</p>
+                                            <a href="{% url 'deletePosition' lost_found.id %}" class="btn btn-primary" onclick="return confirm('Are you sure?');">Delete</a>
+                                            <a href="#" class="btn btn-primary">Contact</a>
+                                          </div>
+                                        </div>
                                     {% endfor %}
-	                            </table>
+	                            </div>
                             </div>
                     </div>
                 </div>
@@ -94,34 +96,6 @@
         <!-- Current Positions End -->
 
         <!-- Total Positions Start -->
-
-        <div class="container-xxl py-5">
-            <div class="positionsTable">
-                <div class="row gy-5 gx-4 justify-content-center">
-                    <div class="text-center wow fadeInUp formtable" data-wow-delay="0.5s">
-                        <h2 class="text-primary-gradient fw-medium loginmg">Total Positions</h2>
-                        <hr>
-                            <div class="card card-body">
-	                            <table class="table table-sm">
-		                            <tr>
-			                            <th class="text-primary-gradient fw-medium loginmg pos-tb-item">Ticker</th>
-			                            <th class="text-primary-gradient fw-medium loginmg pos-tb-item">Cost Average</th>
-			                            <th class="text-primary-gradient fw-medium loginmg pos-tb-item">Quantity</th>
-		                            </tr>
-
-                                    {% for pos in aggregate_positions %}
-                                    <tr>
-                                        <td class="pos-tb-item">{{pos.ticker}}</td>
-                                        <td class="pos-tb-item">{{pos.cost}}</td>
-                                        <td class="pos-tb-item">{{pos.quantity}}</td>
-                                    </tr>
-                                    {% endfor %}
-	                            </table>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
       

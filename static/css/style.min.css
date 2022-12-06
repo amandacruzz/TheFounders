@@ -43,7 +43,12 @@ h6,
     font-weight: 500 !important;
 }
 
-
+.lost_table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    align-items: center;
+}
 /*** Gradient Text & BG ***/
 .text-primary-gradient {
     background: linear-gradient(to bottom right, var(--primary), var(--secondary));

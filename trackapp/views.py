@@ -91,6 +91,8 @@ def positions(request):
 
         position.save()
 
+    user_lost_found = lostItem.objects.filter(username_id__username=request.user)
+
     total_all_positions = Acc_Positions.objects.count()
     user_positions = Acc_Positions.objects.filter(username_id__username=request.user)
 
@@ -102,13 +104,15 @@ def positions(request):
         'user_positions': user_positions,
         'total_all_positions': total_all_positions,
         'aggregate_positions': aggregate_pos,
-        'form': form
+        'form': form,
+        "user_lost_found": user_lost_found
     }
+
     return render(request, 'positions.html', context)
 
 
 def deletePosition(request, pk):
-    position = Acc_Positions.objects.get(id=pk)
+    position = lostItem.objects.get(id=pk)
     position.delete()
     return redirect('positions')
 

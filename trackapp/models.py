@@ -28,6 +28,7 @@ class lostItem(models.Model):
 	title = models.CharField(max_length=1000, null=True)
 	location = models.CharField(max_length=1000, null=True)
 	description = models.CharField(max_length=1000, null=True)
+	lostOrFound = models.CharField(max_length=1000, null=True, choices=(("Found", "Found"), ("Lost", "Lost")))
 	image = models.ImageField(upload_to = "static/img/")
 
 class Acc_Positions(models.Model):

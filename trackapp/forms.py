@@ -5,4 +5,4 @@ from .models import Acc_Positions, lostItem
 class Lost_Item_Form(forms.ModelForm):
 	class Meta:
 		model = lostItem
-		fields = ['title', 'location', 'description', 'image']
+		fields = ['title', 'location', 'description', 'lostOrFound', 'image']
