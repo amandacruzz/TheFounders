@@ -39,39 +39,7 @@
                             <a href="#" class="btn btn-primary">Contact</a>
                           </div>
                         </div>
-                        
 
-
-                        
-
-
-
-
-
-                        <!-- Coin Prices Start -->
-
-                          <div class="card card-body text-center wow fadeInUp formtable" data-wow-delay="0.2s" style="margin-bottom: 20px">
-                              <h2 class="text-primary-gradient fw-medium loginmg" style="margin-bottom: 20px">Coin Prices</h2>
-	                          <table class="table table-sm tabletxt">
-		                            <tr>
-			                            <th class="titlecol fw-medium loginmg">Ticker</th>
-			                            <th class="titlecol fw-medium loginmg">Name</th>
-			                            <th class="titlecol fw-medium loginmg">Price (USD)</th>
-		                            </tr>
-
-                            
-                                        {% for price in prices %}
-                                        <tr>
-                                            <td class="text-primary-gradient">{{price.symbol}}</td>
-                                            <td class="titlecol">{{price.name}}</td>
-                                            <td class="text-primary-gradient">{{price.derivedUSD}}</td>
-                                        </tr>
-                                        {% endfor %}
-
-	                          </table>
-                          </div>
-
-                        <!-- Coin Prices End -->
 
                     </div>
                 </div>
