@@ -147,4 +147,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-CSRF_TRUSTED_ORIGINS = ['https://*']
+CSRF_TRUSTED_ORIGINS = ['https://*', "https://gatorlost.com"]
