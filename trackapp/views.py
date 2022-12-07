@@ -84,8 +84,8 @@ def positions(request):
     form = Lost_Item_Form(request.POST, request.FILES)
 
     if form.data:
-        print(form.errors)
-        print(request.FILES)
+        # print(form.errors)
+        # print(request.FILES)
         position = form.save(commit=False)
 
         position.username_id = request.user
